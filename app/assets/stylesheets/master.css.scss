@@ -46,3 +46,11 @@ h2 {
   text-shadow: 2px 2px #ff0000;
   text-align: center;
 }
+
+body {
+  padding-right: 0px !important
+}
+
+.modal-open {
+  overflow-y: auto;
+}

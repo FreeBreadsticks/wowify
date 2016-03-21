@@ -7,7 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+    <div class="links col-xs-4 pull-left">
+      <%= link_to 'Wow', root_path %>
+    </div>
+    <div class ="links col-xs-3 pull-right">
+      <%= link_to 'Wowify 4 U', '#', data: {toggle: 'modal', target: '#myModal'} %>
+    </div>
+  </header>
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h1 class="modal-title" id="myModalLabel">Wowifyer</h1>
+        </div>
+        <%= simple_form_for Meme.new do |f| %>
+          <div class="modal-body">
+            <%= f.input :wow %>
+            <%= f.input :such %> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= f.submit 'Wow', class: 'btn btn-info' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br class="clear" />
 <%= yield %>
 
 </body>

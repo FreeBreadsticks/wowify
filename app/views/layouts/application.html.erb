@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <header>
@@ -26,8 +27,8 @@
         </div>
         <%= simple_form_for Meme.new do |f| %>
           <div class="modal-body">
-            <%= f.input :wow %>
-            <%= f.input :such %> 
+            <%= f.input :wow, label: "Noun" %>
+            <%= f.input :such, label: "Verb or Adjective" %> 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
